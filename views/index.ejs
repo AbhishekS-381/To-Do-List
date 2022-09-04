@@ -1,0 +1,105 @@
+<html>
+
+<head>
+  <title> To-Do List </title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+  <link href="/styles.css" rel="stylesheet">
+  <link href="/myownbootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="col-12 col" id="mainDiv">
+    <div class="col-12 col">
+      <div class="col-2 col">&nbsp;</div>
+      <div class="col-8 col" id="title">
+        To-Do List
+      </div>
+      <div class="col-2 col">&nbsp;</div>
+    </div>
+
+    <div class="col-12 col">
+      <div class="col-2 col">&nbsp;</div>
+      <div class="col-8 col" id="instDiv">
+        <p id="instructions">Instructions to use the app</p>
+        <ul id="instructionList">
+          <li>In the text bar add the task and the click on "add task" button</li>
+          <li>In the next section you can see the task which are pending.</li>
+          <li>To remove the completed task, check the task which you have completed and the click on "Delete Task"
+            button
+          </li>
+        </ul>
+      </div>
+      <div class="col-2 col">&nbsp;</div>
+    </div>
+
+    <div class="col-12 col">
+      <div class="col-2 col">&nbsp;</div>
+      <div class="col-8 col" id="taskDiv">
+        <div class="col-12 col" id="div2">
+          <form action="/addtask" method="POST">
+            <input type="text" name="newtask" placeholder="Add Task...">
+            <button id="btnAdd"><i class="fa fa-plus"></i>Add Task</button>
+          </form>
+        </div>
+        <div class="col-12 col" id="taskToCompete">
+          <div class="col-12 col">
+            <p id="list">Task to complete</p>
+          </div>
+          <div class="col-12 col">
+            <ul id="taskList">
+              <% for( var i=0; i < tasktocomplete.length; i++){ %>
+                <div class="col-12 col">
+                  <li>
+                    <div class="col col-6">
+                      <div class="col-12 col">
+                        <form id="editform" action="/edit/<%= tasktocomplete[i].ID %>" method="POST">
+                          <div class="col-6 col">
+                            <input type="text" name="check" placeholder="<%= tasktocomplete[i].TASK %>">
+                          </div>
+                          <div class="col-6 col">
+                            <button id="editBtn">Edit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="col col-6">
+                      <form id="deleteform" action="/removetask/<%= tasktocomplete[i].ID %>" method="POST">
+                        <button id="deleteBtn">Mark as Complete</button>
+                      </form>
+                    </div>
+                  </li>
+                </div>
+                <% } %>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-12 col" id="completedTask">
+          <div class="col-12 col">
+            <p id="list">Completed Task</p>
+          </div>
+          <div class="col-12 col">
+            <ul id="taskList">
+              <% for( var i=0; i < completedtask.length; i++){ %>
+                <div class="col-12 col">
+                  <li>
+                    <div class="col col-6">
+                      <form id="deleteform" action="/deletetask/<%= completedtask[i].ID %>" method="POST">
+                        <input type="text" name="deletecheck" placeholder="<%= completedtask[i].TASK %>">
+                        <button id="deleteBtn">Delete Task</button>
+                      </form>
+                    </div>
+                  </li>
+                </div>
+                <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-2 col">&nbsp;</div>
+    </div>
+  </div>
+</body>
+
+</html>

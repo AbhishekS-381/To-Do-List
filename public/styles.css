@@ -1,0 +1,103 @@
+#mainDiv{
+    border: 2px solid #009ef9;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom: none;
+}
+#title{
+    font-size: 90px;
+    margin-top: 50px;
+    font-weight: bolder;
+    color: #009ef9;
+    text-align: center;
+}
+#instructions{
+    font-size: 20px;
+    font-weight: bolder;
+    color: #009ef9;
+    padding-left: 25px;
+}
+#instructionList{
+    font-size: small;
+    font-weight: lighter;
+    color: grey;
+    list-style-type:number;
+    margin-left: 15px;
+}
+#instDiv{
+    padding-left: 7%;
+    margin-top: 50px;
+    border: 2px solid #009ef9;
+    border-radius: 50px;
+    padding-bottom: 1%;
+}
+#taskDiv{
+    margin-top: 50px;
+    border: 2px solid #009ef9;
+    border-radius: 50px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 1%;
+    padding-top: 2%;
+}
+#div2{
+    display: flex;
+    justify-content: center;
+}
+#list{
+    border-top: 1px solid black;
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #009ef9;
+}
+input[type=text] {
+    transition: width 0.4s ease-in-out;
+    background-color: white;
+    background-position: 2px 1px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    border: 2px solid #009ef9;
+    border-radius: 5px;
+    height: 25px;
+}
+#btnAdd{
+    border-radius: 10px;
+    height: 25px;
+    width: 100px;
+    background-color: #009ef9;
+    color: white;
+    border:none;
+}
+#editBtn{
+    border-radius: 10px;
+    height: 25px;
+    width: 50px;
+    background-color: #009ef9;
+    color: white;
+    border:none;
+}
+#deleteBtn{
+    border-radius: 10px;
+    height: 25px;
+    width: 150px;
+    background-color: #009ef9;
+    color: white;
+    border:none;
+}
+#taskList{
+    list-style-type:number;
+    font-size: medium;
+    font-family: cursive;
+    font-weight: bold;
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+i{
+    padding-right: 10px;
+    color: white;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
